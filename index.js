@@ -1,7 +1,7 @@
 import {Howl} from "./web_modules/howler.js";
 console.log(Howl);
 const sound = new Howl({
-  src: ["/assets/sonar.wav"]
+  src: ["./assets/sonar.wav"]
 });
 const sonar = () => {
   console.log("sonar!");
