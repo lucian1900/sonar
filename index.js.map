@@ -1,1 +1,7 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":";AAAA,OAAO,EAAE,IAAI,EAAE,MAAM,QAAQ,CAAA;AAE7B,MAAM,KAAK,GAAG,IAAI,IAAI,CAAC;IACnB,GAAG,EAAE,CAAC,WAAW,CAAC;CACrB,CAAC,CAAA;AAEF,MAAM,KAAK,GAAG,GAAG,EAAE;IACf,OAAO,CAAC,GAAG,CAAC,QAAQ,CAAC,CAAA;IACrB,KAAK,CAAC,IAAI,EAAE,CAAA;AAChB,CAAC,CAAA;AAED,MAAA,QAAQ,CAAC,cAAc,CAAC,OAAO,CAAC,0CAAE,gBAAgB,CAAC,OAAO,EAAE,KAAK,EAAC"}
+{
+  "version": 3,
+  "sources": ["/Users/luci/Developer/sonar/src/index.ts"],
+  "sourcesContent": ["import { Howl } from \"howler\"\n\nconsole.log(Howl)\n\nconst sound = new Howl({\n    src: [\"/assets/sonar.wav\"],\n})\n\nconst sonar = () => {\n    console.log('sonar!')\n    sound.play()\n}\n\ndocument.getElementById(\"sound\")?.addEventListener(\"click\", sonar)\n"],
+  "mappings": "AAAA;AAEA,QAAQ,IAAI;AAEZ,MAAM,QAAQ,IAAI,KAAK;AAAA,EACnB,KAAK,CAAC;AAAA;AAGV,MAAM,QAAQ;AACV,UAAQ,IAAI;AACZ,QAAM;AAAA;AAGV,SAAS,eAAe,UAAU,iBAAiB,SAAS;",
+  "names": []
+}
