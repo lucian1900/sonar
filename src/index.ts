@@ -1,10 +1,9 @@
 import { Howl } from "howler"
 
-const wavs = require("../static/*.wav");
+console.log(Howl)
 
-console.log(wavs)
 const sound = new Howl({
-    src: [wavs.sonar],
+    src: ["./assets/sonar.wav"],
 })
 
 const sonar = () => {

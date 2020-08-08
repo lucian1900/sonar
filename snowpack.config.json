@@ -1,0 +1,20 @@
+{
+    "mount": {
+      "assets": "/assets",
+      "src": "/"
+    },
+    "plugins": [
+      [
+        "@snowpack/plugin-run-script",
+        { "cmd": "tsc --noEmit", "watch": "$1 --watch" }
+      ]
+    ],
+    "installOptions": {
+      "installTypes": true
+    },
+    "buildOptions": {
+      "minify": false,
+      "sourceMaps": true,
+      "clean": true
+    }
+}

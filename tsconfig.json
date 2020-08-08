@@ -1,26 +1,27 @@
 {
     "compilerOptions": {
-        "module": "es6",
+        "baseUrl": "./",
+        "module": "esnext",
         "moduleResolution": "node",
         "newLine": "LF",
-        "outDir": "./dist",
-        "target": "es6",
+        "target": "esnext",
         "sourceMap": true,
         "declaration": true,
-        "jsx": "preserve",
-        "lib": [
-            "es2017",
-            "dom"
-        ],
         "strict": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
-        "typeRoots": ["src/typings", "node_modules/@types"]
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "paths": {
+            "src/*": ["src/*"],
+            "assets/*": ["assets/*"],
+        }
     },
     "include": [
-        "src/**/*"
+        "src/**/*",
     ],
     "exclude": [
         ".git",
