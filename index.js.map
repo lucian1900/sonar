@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["/Users/luci/Developer/sonar/src/index.ts"],
-  "sourcesContent": ["import { Howl } from \"howler\"\n\nconsole.log(Howl)\n\nconst sound = new Howl({\n    src: [\"./assets/sonar.wav\"],\n})\n\nconst sonar = () => {\n    console.log('sonar!')\n    sound.play()\n}\n\ndocument.getElementById(\"sound\")?.addEventListener(\"click\", sonar)\n"],
-  "mappings": "AAAA;AAEA,QAAQ,IAAI;AAEZ,MAAM,QAAQ,IAAI,KAAK;AAAA,EACnB,KAAK,CAAC;AAAA;AAGV,MAAM,QAAQ;AACV,UAAQ,IAAI;AACZ,QAAM;AAAA;AAGV,SAAS,eAAe,UAAU,iBAAiB,SAAS;",
+  "sourcesContent": ["import howler from \"howler\"\n\nconst sound = new howler.Howl({\n    src: [\"./assets/sonar.wav\"],\n    loop: true,\n})\n\nlet DIST = 5\nlet x = DIST\nlet y = 0\n\nsound.play()\n    \nsound.on('end', () => {\n    \n    if ( x > 0) {\n        x = -DIST\n    } else {\n        x = DIST\n    }\n\n    sound.pos(x, y, 0)\n})\n"],
+  "mappings": "AAAA;AAEA,MAAM,QAAQ,IAAI,QAAO,KAAK;AAAA,EAC1B,KAAK,CAAC;AAAA,EACN,MAAM;AAAA;AAGV,IAAI,OAAO;AACX,IAAI,IAAI;AACR,IAAI,IAAI;AAER,MAAM;AAEN,MAAM,GAAG,OAAO;AAEZ,MAAK,IAAI;AACL,QAAI,CAAC;AAAA;AAEL,QAAI;AAAA;AAGR,QAAM,IAAI,GAAG,GAAG;AAAA;",
   "names": []
 }

@@ -1,11 +1,18 @@
-import {Howl} from "./web_modules/howler.js";
-console.log(Howl);
-const sound = new Howl({
-  src: ["./assets/sonar.wav"]
+import howler2 from "./web_modules/howler.js";
+const sound = new howler2.Howl({
+  src: ["./assets/sonar.wav"],
+  loop: true
 });
-const sonar = () => {
-  console.log("sonar!");
-  sound.play();
-};
-document.getElementById("sound")?.addEventListener("click", sonar);
+let DIST = 5;
+let x = DIST;
+let y = 0;
+sound.play();
+sound.on("end", () => {
+  if (x > 0) {
+    x = -DIST;
+  } else {
+    x = DIST;
+  }
+  sound.pos(x, y, 0);
+});
 //# sourceMappingURL=index.js.map

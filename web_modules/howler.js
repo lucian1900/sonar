@@ -3196,5 +3196,4 @@ var howler = createCommonjsModule(function (module, exports) {
 })();
 });
 
-var Howl$1 = howler.Howl;
-export { Howl$1 as Howl };
+export default howler;
