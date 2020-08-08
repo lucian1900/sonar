@@ -1,8 +1,6 @@
-import { Howl } from "howler"
+import howler from "howler"
 
-console.log(Howl)
-
-const sound = new Howl({
+const sound = new howler.Howl({
     src: ["./assets/sonar.wav"],
 })
 

@@ -16,5 +16,7 @@
       "minify": false,
       "sourceMaps": true,
       "clean": true
+    },
+    "devOptions": {
     }
 }
