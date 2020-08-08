@@ -2,11 +2,22 @@ import howler from "howler"
 
 const sound = new howler.Howl({
     src: ["./assets/sonar.wav"],
+    loop: true,
 })
 
-const sonar = () => {
-    console.log('sonar!')
-    sound.play()
-}
+let DIST = 5
+let x = DIST
+let y = 0
 
-document.getElementById("sound")?.addEventListener("click", sonar)
+sound.play()
+    
+sound.on('end', () => {
+    
+    if ( x > 0) {
+        x = -DIST
+    } else {
+        x = DIST
+    }
+
+    sound.pos(x, y, 0)
+})
