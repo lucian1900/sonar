@@ -1,23 +1,28 @@
-import howler from "howler"
+import howler from 'howler'
+import nipple from 'nipplejs'
 
 const sound = new howler.Howl({
-    src: ["./assets/sonar.wav"],
+    src: ['./assets/sonar.wav'],
     loop: true,
 })
 
-let DIST = 5
-let x = DIST
-let y = 0
-
 sound.play()
-    
-sound.on('end', () => {
-    
-    if ( x > 0) {
-        x = -DIST
-    } else {
-        x = DIST
-    }
 
-    sound.pos(x, y, 0)
+
+const joystick = nipple.create({
+    zone: <HTMLElement>document.querySelector('#joystick'),
+    color: 'purple',
+    mode: 'static',
+    position: {
+        left: '50%',
+        top: '50%',
+    },
+})
+
+joystick.on('move', (_, data) => {
+    if (!data.direction) return;
+
+    let signX = data.direction.x === 'left' ? -1 : 1;
+
+    sound.pos(signX * data.distance * 0.1, 0, 0)
 })

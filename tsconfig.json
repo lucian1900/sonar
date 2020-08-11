@@ -8,6 +8,7 @@
         "sourceMap": true,
         "declaration": true,
         "strict": true,
+        "strictNullChecks": true,
         "allowSyntheticDefaultImports": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
