@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 
 <meta name="viewport" content="width=device-width,user-scalable=no">
+
+<title>Sonar</title>
+
 <script type=module src="./index.js"></script>
 <style>
     body {
@@ -9,9 +12,22 @@
         height: 80vh;
         justify-content: center;
         align-items: center;
+
+        background-color: lightgrey;
+        color: dimgrey;
     }
+
+    #joystick {
+        position: relative;
+    }
+
+    @media (prefers-color-scheme: dark) {
+    body {
+        background-color: dimgrey;
+        color: lightgrey;
+    }
+}
+}
 </style>
 
 <div id=joystick></div>
-
-<audio id=sonar src="./assets/sonar.wav"></audio>

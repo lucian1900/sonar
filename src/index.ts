@@ -1,8 +1,9 @@
 import howler from 'howler'
 import nipple from 'nipplejs'
+import matter from 'matter-js'
 
 const sound = new howler.Howl({
-    src: ['./assets/sonar.wav'],
+    src: ['./assets/sonar.webm', './assets/sonar.mp3'],
     loop: true,
 })
 
@@ -17,12 +18,11 @@ const joystick = nipple.create({
         left: '50%',
         top: '50%',
     },
+    restJoystick: false,
+    lockX: true
 })
 
 joystick.on('move', (_, data) => {
-    if (!data.direction) return;
-
-    let signX = data.direction.x === 'left' ? -1 : 1;
-
-    sound.pos(signX * data.distance * 0.1, 0, 0)
+    sound.pos(data.vector.x, 0, 0)
 })
+
