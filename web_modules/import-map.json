@@ -1,5 +1,6 @@
 {
   "imports": {
-    "howler": "./howler.js"
+    "howler": "./howler.js",
+    "nipplejs": "./nipplejs.js"
   }
 }

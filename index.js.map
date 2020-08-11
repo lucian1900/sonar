@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["/Users/luci/Developer/sonar/src/index.ts"],
-  "sourcesContent": ["import howler from \"howler\"\n\nconst sound = new howler.Howl({\n    src: [\"./assets/sonar.wav\"],\n    loop: true,\n})\n\nlet DIST = 5\nlet x = DIST\nlet y = 0\n\nsound.play()\n    \nsound.on('end', () => {\n    \n    if ( x > 0) {\n        x = -DIST\n    } else {\n        x = DIST\n    }\n\n    sound.pos(x, y, 0)\n})\n"],
-  "mappings": "AAAA;AAEA,MAAM,QAAQ,IAAI,QAAO,KAAK;AAAA,EAC1B,KAAK,CAAC;AAAA,EACN,MAAM;AAAA;AAGV,IAAI,OAAO;AACX,IAAI,IAAI;AACR,IAAI,IAAI;AAER,MAAM;AAEN,MAAM,GAAG,OAAO;AAEZ,MAAK,IAAI;AACL,QAAI,CAAC;AAAA;AAEL,QAAI;AAAA;AAGR,QAAM,IAAI,GAAG,GAAG;AAAA;",
+  "sourcesContent": ["import howler from 'howler'\nimport nipple from 'nipplejs'\nimport matter from 'matter-js'\n\nconst sound = new howler.Howl({\n    src: ['./assets/sonar.webm', './assets/sonar.mp3'],\n    loop: true,\n})\n\nsound.play()\n\n\nconst joystick = nipple.create({\n    zone: <HTMLElement>document.querySelector('#joystick'),\n    color: 'purple',\n    mode: 'static',\n    position: {\n        left: '50%',\n        top: '50%',\n    },\n    restJoystick: false,\n    lockX: true\n})\n\njoystick.on('move', (_, data) => {\n    sound.pos(data.vector.x, 0, 0)\n})\n\n"],
+  "mappings": "AAAA;AACA;AAGA,MAAM,QAAQ,IAAI,QAAO,KAAK;AAAA,EAC1B,KAAK,CAAC,uBAAuB;AAAA,EAC7B,MAAM;AAAA;AAGV,MAAM;AAGN,MAAM,WAAW,OAAO,OAAO;AAAA,EAC3B,MAAmB,SAAS,cAAc;AAAA,EAC1C,OAAO;AAAA,EACP,MAAM;AAAA,EACN,UAAU;AAAA,IACN,MAAM;AAAA,IACN,KAAK;AAAA;AAAA,EAET,cAAc;AAAA,EACd,OAAO;AAAA;AAGX,SAAS,GAAG,QAAQ,CAAC,GAAG;AACpB,QAAM,IAAI,KAAK,OAAO,GAAG,GAAG;AAAA;",
   "names": []
 }
